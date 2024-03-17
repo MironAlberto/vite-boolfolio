@@ -24,3 +24,7 @@ Bonus:
 Gestire la paginazione dei risultati
 
 Buon lavoro e buon divertimento!
+
+------------------------------------------------------------------------------------------------
+
+Continuiamo l'esercizio di ieri aggiungendo Vue Router e la pagina del singolo progetto (che avrà una sua rotta API dedicata).

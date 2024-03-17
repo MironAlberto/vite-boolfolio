@@ -1,6 +1,4 @@
 <script>
-import { RouterView } from 'vue-router';
-
 export default {
     data() {
         return {
@@ -14,11 +12,9 @@ export default {
 </script>
 
 <template>
-    <main>
-        <router-view>
-            
-        </router-view>
-    </main>
+    <h1>
+        Welcome on the site!
+    </h1>
 </template>
 
 <style lang="scss" scoped>

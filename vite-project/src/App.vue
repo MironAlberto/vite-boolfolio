@@ -4,6 +4,7 @@ import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import Axios from 'axios';
 
+
 export default {
     data() {
         return {

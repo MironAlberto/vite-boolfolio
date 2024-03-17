@@ -1,21 +1,34 @@
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
-
+            project: null
         };
     },
     methods: {
-
+        getProjectsApi(){
+            axios.get('http://127.0.0.1:8000/api/projects/' + this.$route.params.id)
+            .then(response => {
+                if (response.data.message) {
+                    this.project = response.data.results.project.data;
+                    // console.log(this.project);
+                }
+                else {
+                    this.$router.push({ name: 'not-found'});
+                }
+            })
+        }
     },
-    props: {
-        project: Object
+    created(){
+        this.getProjectsApi()
     }
 }
 </script>
 
 <template>
-    <div class="container">
+    <div class="container" v-if="project != null">
         <div class="card text-white bg-dark mb-3">
             <div class="card-header">
                 Title: {{ project.title }}
@@ -35,11 +48,6 @@ export default {
                         {{ technology.title }}
                     </span>
                 </li>
-                <router-link :to="{ name: 'projects.show', params: { id: project.id } }">
-                    <a class="btn btn-secondary fw-bolder w-100">
-                        More Details
-                    </a>
-                </router-link>
             </ul>
         </div>
     </div>
@@ -55,5 +63,4 @@ export default {
         object-fit: cover;
     }
 }
-
 </style>

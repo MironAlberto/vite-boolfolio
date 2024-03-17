@@ -15,7 +15,13 @@ export default {
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
                 <div class="container">
-                    <a class="navbar-brand" href="#nogo">Welcome</a>
+                    <router-link :to="{ name: 'welcome'}" class="navbar-brand">
+                        <a href="" class="nav-link">
+                            <span>
+                                Welcome
+                            </span>
+                        </a>
+                    </router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -25,7 +31,13 @@ export default {
                                 <a class="nav-link" href="#nogo">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#nogo">My Projects</a>
+                                <router-link :to="{ name: 'projects.index'}" class="text-decoration-none">
+                                    <a href="" class="nav-link">
+                                        <span>
+                                            My Projects
+                                        </span>
+                                    </a>
+                                </router-link>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="#nogo">
